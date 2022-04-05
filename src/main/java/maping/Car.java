@@ -1,4 +1,4 @@
-package ru.job4j.car.model;
+package maping;
 
 import javax.persistence.*;
 import java.util.Set;
