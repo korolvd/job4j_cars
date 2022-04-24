@@ -16,6 +16,10 @@ public class Car {
     private Brand brand;
 
     @ManyToOne
+    @JoinColumn(name = "engine_id")
+    private Engine engine;
+
+    @ManyToOne
     @JoinColumn(name = "body_id")
     private Body body;
 
@@ -26,9 +30,6 @@ public class Car {
             joinColumns = {@JoinColumn(name = "user_id", nullable = false, updatable = false)},
             inverseJoinColumns = {@JoinColumn(name = "car_id", nullable = false, updatable = false)})
     private Set<User> users = new HashSet<>();
-
-    public Car() {
-    }
 
     public int getId() {
         return id;
@@ -68,5 +69,13 @@ public class Car {
 
     public void setUsers(Set<User> users) {
         this.users = users;
+    }
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
     }
 }

@@ -22,5 +22,6 @@
         <mapping class="ru.job4j.car.model.User" />
         <mapping class="ru.job4j.car.model.Car" />
         <mapping class="ru.job4j.car.model.Post" />
+        <mapping class="ru.job4j.car.model.Engine" />
     </session-factory>
 </hibernate-configuration>

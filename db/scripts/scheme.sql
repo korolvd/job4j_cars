@@ -10,10 +10,18 @@ CREATE TABLE IF NOT EXISTS brand
     name TEXT NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS engine
+(
+    id SERIAL PRIMARY KEY,
+    type TEXT NOT NULL,
+    serial_number VARCHAR NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS car
 (
     id SERIAL PRIMARY KEY,
     brand_id INT NOT NULL REFERENCES brand(id),
+    engine_id INT NOT NULL REFERENCES engine(id),
     body_id INT NOT NULL REFERENCES body(id),
     vin VARCHAR UNIQUE NOT NULL
 );
