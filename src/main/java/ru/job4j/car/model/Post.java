@@ -1,6 +1,7 @@
 package ru.job4j.car.model;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "post")
@@ -11,15 +12,17 @@ public class Post {
 
     private String description;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "car_id")
     private Car car;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
 
     private byte[] photo;
+
+    private LocalDate created;
 
     private boolean visible;
 
@@ -72,5 +75,13 @@ public class Post {
 
     public void setVisible(boolean visible) {
         this.visible = visible;
+    }
+
+    public LocalDate getCreated() {
+        return created;
+    }
+
+    public void setCreated(LocalDate created) {
+        this.created = created;
     }
 }

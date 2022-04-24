@@ -9,16 +9,7 @@ public class Engine {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String type;
-    private String serial;
-
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    private String horsepower;
 
     public String getType() {
         return type;
@@ -28,11 +19,19 @@ public class Engine {
         this.type = type;
     }
 
-    public String getSerial() {
-        return serial;
+    public String getHorsepower() {
+        return horsepower;
     }
 
-    public void setSerial(String serial) {
-        this.serial = serial;
+    public void setHorsepower(String horsepower) {
+        this.horsepower = horsepower;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
